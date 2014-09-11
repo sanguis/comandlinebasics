@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
         
 
 		<!-- For syntax highlighting -->
@@ -64,19 +64,289 @@
                     The terminal is an interface with the operating systam at its most simple level.
                     
 </section>
-      <section>
-          <section>
-          The Basics
-          </section>
-    Learning to create folders
-    Creating files
-    Using Vim (basics)
-    Deleting files
-    Deleting folders
-    Using system variables and intro to the bash profile
-    Powering up your terminal: Using Zshel
-    Prettyfing your terminal with themes and colors
-    Any other stuff to do with a terminal
+                <section>
+
+
+<h1>Unix Philosophy</h1>
+
+<blockquote>
+"Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface."
+- Doug McIlroy
+</blockquote>
+
+		Most of the fist functions you will learn and use on a regular basis will only have one small job.
+</section>
+ <section>             
+<h1>The Basics</h1>
+</section>
+                <section>             
+<h1>The Basics</h1>
+<h2>Getting help</h2>
+</section>
+                  <section>             
+<h1>The Basics</h1>
+<h2>Getting help</h2>
+<h3>Read the manual</h3>
+
+<p>man (manual)</p>
+<p>example: <code>man man</code></p>
+</section>
+    <section>             
+<h1>The Basics</h1>               
+<h2>Flags</h2>
+ flags are options that can be run with a command.
+<aside class="notes">To find out a commands flag one can generally type a command using the flag --help.</aside>
+Flags start with - or -- and 
+(generally 
+example: man man
+    Movement
+    cd (change directory)
+symbols
+~ home
+/ root
+. Current directory
+.. Parent directory</p>
+
+<p>Defaults to home</p>
+</section>
+    <section> 
+<h1>CRUDing</h1>
+
+<p><strong>C</strong>reate
+<strong>R</strong>ead
+<strong>U</strong>pdate
+<strong>D</strong>delete</p>
+
+<p>(but not in that order)
+(Today we will be stating with basic file manipulation)
+(a common techie concept is CRUD)
+(But we will be starting with Reading)</p>
+</section>
+    <section> 
+<h2>cRud</h2>
+
+<h1>Reading the file system</h1>
+
+<h2>ls - list</h2>
+
+<p>Defaults to current directory</p>
+</section>
+    <section> 
+<h3>sample output</h3>
+
+<p>aptdaemon-wVVqMP  hsperfdata<em>root  sni-qt</em>skype<em>7507-pMW0rV  ycm</em>temp
+cvcd              orbit-josh       ssh-KbkbT3y7MaZA          qtsingleapp-homejo-b07c-3e8
+foo               plugtmp          tmux-1000                 qtsingleapp-homejo-b07c-3e8-lockfile
+hsperfdata_josh   skype-7507       v31tyhs                   tmp66LAAe</p>
+
+<p>(Lets see what we can do with the flags.)
+(Running help is going to provide a lot of options that we don't have time to cover here so we will only look at the two most commonly uses ones.)</p>
+</section>
+    <section> 
+<h1>-l</h1>
+
+<p>Use a long listing format</p>
+
+<pre>
+ls -l                                                                                                       ⏎
+total 56
+drwx------ 2 josh josh 4096 Sep 11 09:56 aptdaemon-wVVqMP
+drwx------ 2 root root 4096 Sep  9 09:07 cvcd
+drwxrwxr-x 3 josh josh 4096 Sep 10 16:21 foo
+drwxr-xr-x 2 josh josh 4096 Sep 11 09:55 hsperfdata<em>josh
+drwxr-xr-x 2 root root 4096 Sep 11 09:58 hsperfdata</em>root
+drwx------ 2 josh josh 4096 Dec 31  1969 orbit-josh
+drwx------ 2 josh josh 4096 Sep 11 09:44 plugtmp
+</pre>
+</section>
+    <section> 
+<h1>-a, --all</h1>
+
+<p>Do not ignore entries starting with .</p>
+
+<p>@@@
+.                          cvcd             orbit-josh                tmux-1000   qtsingleapp-homejo-b07c-3e8
+..                         foo              plugtmp                   v31tyhs     qtsingleapp-homejo-b07c-3e8-lockfile
+aptdaemon-wVVqMP           hsperfdata<em>josh  skype-7507                .wine-1000  tmp66LAAe
+.com.google.Chrome.9pVhQ1  hsperfdata</em>root  sni-qt<em>skype</em>7507-pMW0rV  .X11-unix   .X0-lock
+@@@</p>
+
+<h2>What does a dot have to do with anything?</h2>
+</section>
+    <section> 
+<p>Dot files are hidden files on a Unix file system.</p>
+
+<ul>
+<li>generally settings files</li>
+<li>or application data</li>
+<li>Works like the Windows registry.</li>
+</ul>
+</section>
+    <section>
+<h1>Reading files</h1>
+
+<p><strong><em>more</em></strong> or <strong><em>less</em></strong></p>
+</section>
+    <section>
+<h2>Crud</h2>
+
+<h1>Creating Things</h1>
+</section>
+    <section>
+<h2>Folders</h2>
+
+<p>mkdir foo</p>
+</section>
+    <section>
+<p>Wait theres more that you can do with that command. What if you wanted to create a child directory of, foo?</p>
+
+<pre>
+ mkdir --help <br />
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.</p>
+
+<p>Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z, --context=CTX  set the SELinux security context of each created
+                      directory to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+</pre>
+</section>
+    <section>
+<h3>What Flag would allow me to create the directory and sub directories</h3>
+
+<p>foo/bar/public_html, in a single command?</p>
+</section>
+    <section>
+<pre><code>Creating files
+touch
+</code></pre>
+
+<h2>Files</h2>
+
+<p>touch</p>
+
+<p>(touch can be used for more than just creating a file. It can also be used to update certain meta data of a file, suchh as last updated date.  I have never used any of the flags in touch)</p>
+</section>
+    <section>
+<h2>crUd</h2>
+
+<h1>Editing/updating</h1>
+
+<p>mv = move</p>
+
+<p>(used for moving files and folders another location.
+Commonly used for renaming a folder)</p>
+</section>
+    <section>
+<h2>Updating files</h2>
+
+<p>Vim and Nano</p>
+</section>
+    <section>
+<h1>Using Vim (basics)</h1>
+
+<p>(Stands for vi improved)</p>
+
+<p>Vi was made before the mouse was invented.</p>
+
+<p>(the developers realized that they needed a more efficient way of running commands and moving around than menus and arrow keys. so there are 3 primary modes of operation in Vim</p>
+</section>
+    <section>
+<h3>Normal mode</h3>
+<img src="./images/vi-vim-cheat-sheet.gif" />
+<p>http://www.viemu.com/vi-vim-cheat-sheet.gif</p>
+</section>
+    <section data-transition="zoom">
+<h3>Insert modes</h3>
+        <img src="./images/vi-vim-cheat-sheet-insert.png" />
+</section>
+    <section data-transition="zoom">
+<h3>Visual mode</h3>
+<img src="./images/vi-vim-cheat-sheet-visual.png" />
+<p>(the most of the movement and edit functions will work well but I want to mention Y for yank and D for delete, but it will also serve as a Cut function. You can P to paste the deleted or yanked string.)</p>
+</section>
+    <section>
+<h1>common Vim commands</h1>
+
+<ul>
+    <li>:w write file</li>
+    <li>:q quit</li>
+    <li>:help</li>
+    <h3> Commands may be combined</h3>
+save and quite :wq</ul>
+</section>
+    <section>
+<pre><code>Nano Basics
+
+image
+</code></pre>
+
+<h2>cruD</h2>
+
+<h1>Deleting Things</h1>
+
+<p>rm</p>
+
+<p>all you need to delete everything.
+This is the really real world, their aint no coming back.
+(there is no recycling bin here recovering files can be extremely difficult)</p>
+
+<p>(again the the --help flag output is to long for a slide but we will cover the ones I use the most)</p>
+
+<h3>-f, --force</h3>
+
+<p>rm -f file
+ (forces the deletion of the file. With out it it will give you an are you sure prompt)</p>
+
+<h3>-d, --dir</h3>
+
+<p>rm -d directory</p>
+
+<p>(deletes an <strong>empty</strong> directory)
+(to delete a populated directory you will need to combine the two above flags.)</p>
+
+<h1>Shell flavors</h1>
+
+<p>A shell is the interface that is presented to the user of the command line.
+They provide goodies like </p>
+
+<ul>
+<li>history</li>
+<li>auto completion</li>
+<li>custom settings</li>
+</ul>
+
+<p>By default almost every one will be using a shell called BASH.</p>
+
+<p>(BASH version one was released in 1989, version 4.7 was pleased this past Feb)</p>
+
+<p>(In the last few years a newer shell has been becoming more popular called Zshel)
+(Zshel take all of peoples fav things of about bash and improves on it)</p>
+
+<pre><code>Using system variables and intro to the bash profile
+Powering up your terminal: Using Zshel
+Prettyfing your terminal with themes and colors
+Any other stuff to do with a terminal
+
+            &lt;/section&gt;
+  &lt;section&gt;
+      &lt;section&gt;
+      The Basics
+      &lt;/section&gt;
+Learning to create folders
+Creating files
+Using Vim (basics)
+Deleting files
+Deleting folders
+Using system variables and intro to the bash profile
+Powering up your terminal: Using Zshel
+Prettyfing your terminal with themes and colors
+Any other stuff to do with a terminal
+</code></pre>
 </section>
                 
                 
