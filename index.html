@@ -70,7 +70,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         - Doug McIlroy
       </blockquote>
 
-        <aside class="notes">Most of the fist functions you will learn and use on a regular basis will only have one small job.</aside>
+      <aside class="notes">Most of the fist functions you will learn and use on a regular basis will only have one small job.</aside>
     </section>
     <section>             
       <h1>The Basics</h1>
@@ -92,26 +92,26 @@ if( window.location.search.match( /print-pdf/gi ) ) {
       <h1>Flags</h1>
       <p>options that can be run with a command.</p>     
       Flags start with - or -- 
-      </section>
-         <section>             
+    </section>
+    <section>             
       <h2>The Basics</h2>               
       <h1>Flags</h1>
-             <p class="fragment roll-in">-fdacds</p>
-             <p class="fragment roll-in">--location --name</p>
-             <p class="fragment roll-in">-x true -v fales --dir foobar</p>
-      </section>
-      <section>
-           <h2>The Basics</h2>               
-          <h1>Operators</h1>
-          <pre style="font-size: 1em;">
+      <p class="fragment roll-in">-fdacds</p>
+      <p class="fragment roll-in">--location --name</p>
+      <p class="fragment roll-in">-x true -v fales --dir foobar</p>
+    </section>
+    <section>
+      <h2>The Basics</h2>               
+      <h1>Operators</h1>
+      <pre style="font-size: 1em;">
       <strong>~</strong>    home
       <strong>/</strong>    root</li>
       <strong>.</strong>    Current directory
       <strong>..</strong>   Parent directory
-              </pre>
-     </section>
-      <section>
-           <h2>The Basics</h2>
+      </pre>
+    </section>
+    <section>
+      <h2>The Basics</h2>
       <h1>Movement</h1>
       <p>cd (change directory)</p>
 
@@ -126,9 +126,9 @@ if( window.location.search.match( /print-pdf/gi ) ) {
       <strong>D</strong>elete</p>
 
       <aside class="notes">(but not in that order)<br>
-      (Today we will be stating with basic file manipulation)<br>
-      (a common techie concept is CRUD)<br>
-          (But we will be starting with Reading)</aside>
+        (Today we will be stating with basic file manipulation)<br>
+        (a common techie concept is CRUD)<br>
+        (But we will be starting with Reading)</aside>
     </section>
     <section> 
       <h2>c<strong>R</strong>ud</h2>
@@ -140,7 +140,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
       <p>Defaults to current directory</p>
     </section>
     <section> 
-          <h2>ls, list</h2>
+      <h2>ls, list</h2>
       <h3>sample output</h3>
 
       <pre>
@@ -153,16 +153,16 @@ index.html         misc                UPGRADE.txt
 index.php          modules             web.config
 INSTALL.mysql.txt  profiles            xmlrpc.php
 INSTALL.pgsql.txt  README.txt              
-</pre>
+      </pre>
 
-       <aside class="notes">
-           <p>this tells us very little about the file</p>
-           in some shells there may be some syntax highlighting that will indicate a file or folder oe what can be done with the item.
-           (Lets see what we can do with the flags.)<br>
-           (Running help is going to provide a lot of options that we don't have time to cover here so we will only look at the two most commonly uses ones.)</aside>
+      <aside class="notes">
+        <p>this tells us very little about the file</p>
+        in some shells there may be some syntax highlighting that will indicate a file or folder oe what can be done with the item.
+        (Lets see what we can do with the flags.)<br>
+        (Running help is going to provide a lot of options that we don't have time to cover here so we will only look at the two most commonly uses ones.)</aside>
     </section>
     <section> 
-        <h2>ls</h2>
+      <h2>ls</h2>
       <h1>-l, Long format</h2>
       <p>Use a long listing format</p>
 
@@ -177,36 +177,36 @@ drwxr-xr-x 15 knectar knectar 4096 Nov 13  2012 modules
 -rw-r--r--  1 knectar knectar  720 Nov 13  2012 robots.txt
 drwxr-xr-x  5 knectar knectar 4096 Nov 13  2012 sites
 drwxr-xr-x  4 knectar knectar 4096 Nov 13  2012 themes
-</pre>
-          </section>
-    <section>
-        <h2>ls, list</h2>
-      <h1>-l, Long format</h2>
-       <pre style="font-size:.7em">
-<span class="fragment highlight-current-blue">total 244</span>
-<span class="fragment highlight-current-blue">-</span><span class="fragment highlight-current-blue">rw-r--r--</span>  <span class="fragment highlight-current-blue">1</span> <span class="fragment highlight-current-blue">knectar</span> <span class="fragment highlight-current-blue">knectar</span> <span class="fragment highlight-current-blue">3259</span> <span class="fragment highlight-current-blue">Jan  4  2013</span> <span class="fragment highlight-current-blue">index.php</span></pre>
-        
-    <aside class="notes">
-    <p>total number of items refed including one level of sub items<br>
-    type of item (d indicates directory)
-    permissions (we will get to that later if we have time)<br>
-    number of items include one sub levels items plus it self<br>
-    owning user<br>
-    owning groupd<br>
-    size<br>
-    date modified<br>
-    file name
-        </p>
+      </pre>
     </section>
     <section>
+      <h2>ls, list</h2>
+      <h1>-l, Long format</h2>
+      <pre style="font-size:.7em">
+<span class="fragment highlight-current-blue">total 244</span>
+<span class="fragment highlight-current-blue">-</span><span class="fragment highlight-current-blue">rw-r--r--</span>  <span class="fragment highlight-current-blue">1</span> <span class="fragment highlight-current-blue">knectar</span> <span class="fragment highlight-current-blue">knectar</span> <span class="fragment highlight-current-blue">3259</span> <span class="fragment highlight-current-blue">Jan  4  2013</span> <span class="fragment highlight-current-blue">index.php</span></pre>
+
+      <aside class="notes">
+        <p>total number of items refed including one level of sub items<br>
+        type of item (d indicates directory)
+        permissions (we will get to that later if we have time)<br>
+        number of items include one sub levels items plus it self<br>
+        owning user<br>
+        owning groupd<br>
+        size<br>
+        date modified<br>
+        file name
+        </p>
+      </section>
+      <section>
         <h2>ls, list</h2>
-      <h1>-a, --all</h1>
-      <p>Do not ignore entries starting with .</p>
-				 </section>
-    <section>
+        <h1>-a, --all</h1>
+        <p>Do not ignore entries starting with .</p>
+      </section>
+      <section>
         <h2>ls, list</h2>
-      <h1>-a, --all</h1>
-<pre>
+        <h1>-a, --all</h1>
+        <pre>
 <span class="fragment highlight-current-blue">.</span>               index.php           profiles
 <span class="fragment highlight-current-blue">..</span>             INSTALL.mysql.txt   README.txt
              INSTALL.mysql.txt   README.txt
@@ -218,70 +218,66 @@ cron.php       INSTALL.txt         themes
 .htaccess      MAINTAINERS.txt     UPGRADE.txt
 includes       misc                web.config
 index.html     modules             xmlrpc.php
-</pre>
-				</section>
-				<section>
-      <h2>What does a dot have to do with anything?</h2>
-    </section>
-    <section>
-				<h1>.Dot .files</h1>
-      <p>Dot files are hidden files on a Unix file system.</p>
+        </pre>
+      </section>
+      <section>
+        <h2>What does a dot have to do with anything?</h2>
+      </section>
+      <section>
+        <h1>.Dot .files</h1>
+        <p>Dot files are hidden files on a Unix file system.</p>
 
-      <ul>
-        <li>generally settings files</li>
-        <li>or application data</li>
-        <li>Works like the Windows registry.</li>
-      </ul>
-    </section>
-    <section>
-				<h2>c<strong>R</strong>ud</h2>
-      <h1>Reading files</h1>
-				
-      <p><strong><em>more</em></strong> or <strong><em>less</em></strong></p>
-    </section>
-    <section>
-				<h2><strong>C</strong>rud</h2>
+        <ul>
+          <li>generally settings files</li>
+          <li>or application data</li>
+          <li>Works like the Windows registry.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>c<strong>R</strong>ud</h2>
+        <h1>Reading files</h1>
 
-      <h1>Creating Things</h1>
-    </section>
-    <section>
-      <h2>Folders</h2>
+        <p><strong><em>more</em></strong> or <strong><em>less</em></strong></p>
+      </section>
+      <section>
+        <h2><strong>C</strong>rud</h2>
 
-      <p>mkdir foo</p>
-    </section>
-    <section>
-      <p>Wait theres more that you can do with that command. What if you wanted to create a child directory of, foo?</p>
+        <h1>Creating Things</h1>
+      </section>
+      <section>
+        <h2>mkdir</h2>
+        <p>Creating directories</p>
 
-      <pre>
- mkdir --help <br />
+        <p class="fragment roll-in">mkdir foo</p>
+        <aside class="notes"> <p>Wait theres more that you can do with that command. What if you wanted to create a child directory of, foo? well lets look at the help flag output </p></aside>
+      </section>
+      <section>
+        <h3>mkdir --help</h3>
+        <pre style="font-size:.6em;">
 Usage: mkdir [OPTION]... DIRECTORY...
-Create the DIRECTORY(ies), if they do not already exist.</p>
+Create the DIRECTORY(ies), if they do not already exist.
 
-<p>Mandatory arguments to long options are mandatory for short options too.
+Mandatory arguments to long options are mandatory for short options too.
   -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
-  -p, --parents     no error if existing, make parent directories as needed
+  <span class="fragment highlight-current-blue">-p, --parents     no error if existing, make parent directories as needed</span>
   -v, --verbose     print a message for each created directory
   -Z, --context=CTX  set the SELinux security context of each created
                       directory to CTX
       --help     display this help and exit
       --version  output version information and exit
-      </pre>
-    </section>
-    <section>
-      <h3>What Flag would allow me to create the directory and sub directories</h3>
+        </pre>
+      </section>
+
+      <aside class="notes">What Flag would allow me to create the directory and sub directories</h3>
 
       <p>foo/bar/public_html, in a single command?</p>
-    </section>
+    </aside>
     <section>
-      <pre><code>Creating files
-touch
-      </code></pre>
+      <h2><strong>C</strong>rud</h2>
+      <h1>touch</h1>
+      <p class="fragment roll-in">mkdir foobar_file</p>
 
-      <h2>Files</h2>
-
-      <p>touch</p>
-
-      <p>(touch can be used for more than just creating a file. It can also be used to update certain meta data of a file, suchh as last updated date.  I have never used any of the flags in touch)</p>
+      <aside class="notes">(touch can be used for more than just creating a file. It can also be used to update certain meta data of a file, suchh as last updated date.  I have never used any of the flags in touch)</aside>
     </section>
     <section>
       <h2>crUd</h2>
