@@ -281,58 +281,74 @@ Mandatory arguments to long options are mandatory for short options too.
     </section>
     <section>
       <h2>crUd</h2>
-
       <h1>Editing/updating</h1>
-
-      <p>mv = move</p>
+      <aside class="notes">
+        This will also include moveing and renaming files
+      </aside>
+    </section>
+    <section>
+      <h2>crUd</h2>
+      <h1>mv, move</h1>
 
       <p>(used for moving files and folders another location.
       Commonly used for renaming a folder)</p>
     </section>
     <section>
+      <h2>crUd</h2>
+      <h1>mv, move</h1>
+      mv foo.txt ~/Documents/bar.txt
+      <p class="fragment roll-in">cp foo.txt ~/Documents/bar.txt</p>
+      <aside class="notes">You can also copy a file with a simaler command cp</aside>
+    </section>
+    <section>
       <h2>Updating files</h2>
-
-      <p ><img src="./images/Vim_logo.png" style="border: none; box-shadow: none;    height: 9em;"> <span style="font-size:4em;">&amp;</span> <img src="./images/gnu-nano-editor-mac-image.png" style="border: none; box-shadow: none;" />  </p>
+      <p ><img src="./images/Vim_logo.png" style="border: none; box-shadow: none; height: 8em;"> <span style="font-size:4em;">&amp;</span> <img src="./images/gnu-nano-editor-mac-image.png" style="border: none; box-shadow: none;" />  </p>
     </section>
     <section>
-      <h1>Using Vim (basics)</h1>
+      <h1>Using <img src="./images/Vim_logo.png" style="border: none; box-shadow: none; height: 1em; margin: -.3em 0" title="Vim"> (basics)</h1>
+      <aside class="notes">
+        <p>(Stands for vi improved)</p>
 
-      <p>(Stands for vi improved)</p>
+        <p>Vi was made before the mouse was invented.</p>
 
-      <p>Vi was made before the mouse was invented.</p>
-
-      <p>(the developers realized that they needed a more efficient way of running commands and moving around than menus and arrow keys. so there are 3 primary modes of operation in Vim</p>
+        <p>(the developers realized that they needed a more efficient way of running commands and moving around than menus and arrow keys. so there are 3 primary modes of operation in Vim</p>
+      </aside>
     </section>
-    <section>
+    <section data-transition="fade">
       <h3>Normal mode</h3>
       <img src="./images/vi-vim-cheat-sheet.gif" />
       <p>http://www.viemu.com/vi-vim-cheat-sheet.gif</p>
     </section>
-    <section data-transition="zoom">
+    <section data-transition="fade">
       <h3>Insert modes</h3>
       <img src="./images/vi-vim-cheat-sheet-insert.png" />
     </section>
-    <section data-transition="zoom">
+    <section data-transition="fade">
       <h3>Visual mode</h3>
       <img src="./images/vi-vim-cheat-sheet-visual.png" />
       <p>(the most of the movement and edit functions will work well but I want to mention Y for yank and D for delete, but it will also serve as a Cut function. You can P to paste the deleted or yanked string.)</p>
     </section>
     <section>
-      <h1>common Vim commands</h1>
+      <h1>common <img src="./images/Vim_logo.png" style="border: none; box-shadow: none; height: 1em; margin: -.3em 0" title="Vim"> commands</h1>
 
       <ul>
         <li>:w write file</li>
         <li>:q quit</li>
         <li>:help</li>
-        <h3> Commands may be combined</h3>
-        save and quite :wq</ul>
+        <aside class="fragment roll-in">
+          <h3> Commands may be combined</h3>
+          save and quite :wq</ul>
+      </aside>
     </section>
     <section>
-      <pre><code>Nano Basics
-
-image
-      </code></pre>
-
+      <h1><img src="./images/gnu-nano-editor-mac-image.png" style="border: none; box-shadow: none; height: 1.1em; margin: -.2em 0" title="Vim"> Basics</h1>
+      <img src="images/nano.png" title="nano screenshot">
+      <aside class="notes">Nano is very easy to use, all the options to see here are what is avaible.<br>
+        the ^ stands for the ctrl key.  its easier but way less featured
+      </aside>
+      </pre>
+    </section>
+    <section>
       <h2>cruD</h2>
 
       <h1>Deleting Things</h1>
