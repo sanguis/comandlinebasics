@@ -390,51 +390,70 @@ Mandatory arguments to long options are mandatory for short options too.
     </section>
     <section>
       <h1>Shell flavors</h1>
-
-      <p>A shell is the interface that is presented to the user of the command line.
-      They provide goodies like </p>
-
-      <ul>
-        <li>history</li>
-        <li>auto completion</li>
-        <li>custom settings</li>
+      <ul class="fragment role-in">
+        <li class="fragment role-in">history</li>
+        <li class="fragment role-in">auto completion</li>
+        <li class="fragment role-in">custom settings</li>
       </ul>
-
+      <aside class="notes">
+        <p>the word shell is the thing as the command line but there are diffrrent parrent programs that  will allow access to the command line and present it in devvrent ways</p>
+        <p>Also diffrent shell applications have evoloved to allow for advaced scripting of commands to togather</p>
+        <p>they also provide goodies like:</p>
+        <p>a history of past commands run</p>
+        <p>pattern auto compleation, hit tab to compleate a command or file name. hit tab a second time if there is more than one option and you need to list them.</p>
+      </aside>
+    </section>
+    <section>
+      <h2>Shell flavors</h2>
       <p>By default almost every one will be using a shell called BASH.</p>
+      <p>The Trending shell today is Zshell.</p>
+      <aside class="notes">
+        <p>(BASH version one was released in 1989, version 4.7 was pleased this past Feb)</p>
 
-      <p>(BASH version one was released in 1989, version 4.7 was pleased this past Feb)</p>
+        <p>(In the last few years a newer shell has been becoming more popular called Zshel)
+        (Zshell take all of peoples fav things of about bash and improves on it, better autocomplete more custom command promt options ect.)</p>
+      </aside>
+    </section>
+    <section>
+      <h3>Shell Customazation, uing .rc files</h3>
+      <pre style="font-size:.55em;"><code>
+$EDITOR=vim
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+alias vhost="sudo ~/bin/vhost"
+alias vi="gvim --servername GVIM"
 
-      <p>(In the last few years a newer shell has been becoming more popular called Zshel)
-      (Zshel take all of peoples fav things of about bash and improves on it)</p>
+##############
+## Bash prompt
+function parse_git_branch {
+  git branch --no-color  2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
-      <pre><code>Using system variables and intro to the bash profile
-Powering up your terminal: Using Zshel
-Prettyfing your terminal with themes and colors
-Any other stuff to do with a terminal
+function proml {
+    local BLUE="\[\033[0;34m\]"
+    local RED="\[\033[0;31m\]"
+    local LIGHT_RED="\[\033[1;31m\]"
+    local GREEN="\[\033[0;32m\]"
+    local LIGHT_GREEN="\[\033[1;32m\]"
+    local WHITE="\[\033[1;37m\]"
+    local LIGHT_GRAY="\[\033[0;37m\]"
+    case $TERM in
+    xterm*)
+    TITLEBAR=''
+    ;;
+  *)
+  TITLEBAR=""
+  ;;
+  esac
 
-            &lt;/section&gt;
-  &lt;section&gt;
-      &lt;section&gt;
-      The Basics
-      &lt;/section&gt;
-Learning to create folders
-Creating files
-Using Vim (basics)
-Deleting files
-Deleting folders
-Using system variables and intro to the bash profile
-Powering up your terminal: Using Zshel
-Prettyfing your terminal with themes and colors
-Any other stuff to do with a terminal
+  PS1="${TITLEBAR}\
+  $BLUE[\w$GREEN\$(parse_git_branch)$BLUE]\
+  $GREEN\$ "
+  PS2='> '
+  PS4='+ '
+ }
+ proml
       </code></pre>
     </section>
-
-
-
-
-
-
-
     <section>
       <h2>Contact Me</h2>
       <dl>
@@ -466,19 +485,19 @@ center: true,
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-// Parallax scrolling
-parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-parallaxBackgroundSize: '2100px 900px',
+    // Parallax scrolling
+    parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    parallaxBackgroundSize: '2100px 900px',
 
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-]
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+  { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
 });
 
 </script>
